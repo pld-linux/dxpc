@@ -1,0 +1,19 @@
+--- dxpc-3.7.0/Makefile.in~	Fri Sep  5 06:54:21 1997
++++ dxpc-3.7.0/Makefile.in	Thu Jul 13 20:13:37 2000
+@@ -53,12 +53,12 @@
+ install: install.bin install.man
+ 
+ install.bin:	$(TARGET)
+-	$(srcdir)/mkinstalldirs $(bindir)
+-	$(INSTALL) $(TARGET) $(bindir)/$(TARGET)
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
++	$(INSTALL) $(TARGET) $(DESTDIR)$(bindir)/$(TARGET)
+ 
+ install.man:
+-	$(srcdir)/mkinstalldirs $(man1dir)
+-	$(INSTALL_DATA) $(TARGET).man $(man1dir)/$(TARGET).1
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(man1dir)
++	$(INSTALL_DATA) $(TARGET).man $(DESTDIR)$(man1dir)/$(TARGET).1
+ 
+ clean:
+ 	-rm -f *~ *.o $(TARGET) pure_* quant_* *.bak core gmon.out
