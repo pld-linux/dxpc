@@ -37,7 +37,7 @@ przepustowo¶ci.
 %patch2 -p1
 
 %build
-libtoolize -c -f
+%{__libtoolize}
 aclocal
 %{__autoconf}
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -fno-implicit-templates"
@@ -52,14 +52,12 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/dxpc.1
 
-gzip -9nf CHANGES README TODO
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc CHANGES README TODO
 %doc dxpc.logo.jpg dxpc.logo-small.jpg
 %attr(755,root,root) %{_bindir}/dxpc
 %{_mandir}/man1/*
