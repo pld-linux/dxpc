@@ -1,13 +1,15 @@
 Summary:	dxpc - The Differential X Protocol Compressor
+Summary(pl):	Ró¿nicowy kompresor X protoko³u
 Name:		dxpc
 Version:	3.7.0
 Release:	1
 Group:		X11/Applications/Networking
+Group(de):	X11/Applikationen/Netzwerkwesen
 Group(pl):	X11/Aplikacje/Sieciowe
 License:	Distributable provided copyright and permission notices are included
 Source0:	http://ccwf.cc.utexas.edu/~zvonler/dxpc/%{name}-%{version}.tar.gz
-Patch0:		dxpc-DESTDIR.patch
-Patch1:		dxpc-socklen_t.patch
+Patch0:		%{name}-DESTDIR.patch
+Patch1:		%{name}-socklen_t.patch
 URL:		http://ccwf.cc.utexas.edu/~zvonler/dxpc/
 Icon:		dxpc.logo-smaller-t.gif
 BuildRequires:	libstdc++-devel
@@ -26,9 +28,7 @@ applications run over low-bandwidth links.
 %patch1 -p1
 
 %build
-LDFLAGS="-s"
-CXXFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-exceptions"
-export LDFLAGS CXXFLAGS
+CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 %configure
 make
 
@@ -37,8 +37,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf CHANGES README TODO dxpc-3.7.0.lsm \
-	$RPM_BUILD_ROOT%{_mandir}/man1/*
+gzip -9nf CHANGES README TODO
 
 %clean
 rm -rf $RPM_BUILD_ROOT
