@@ -10,6 +10,7 @@ License:	Distributable provided copyright and permission notices are included
 Source0:	http://ccwf.cc.utexas.edu/~zvonler/dxpc/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-socklen_t.patch
+Patch2:		%{name}-ac_lt.patch
 URL:		http://ccwf.cc.utexas.edu/~zvonler/dxpc/
 Icon:		dxpc.logo-smaller-t.gif
 BuildRequires:	libstdc++-devel
@@ -31,11 +32,15 @@ przepustowo¶ci.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
+libtoolize -c -f
+aclocal
+autoconf
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 %configure
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
