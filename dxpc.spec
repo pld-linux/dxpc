@@ -3,7 +3,7 @@ Summary(pl):	Ró¿nicowy kompresor X protoko³u
 Name:		dxpc
 Version:	3.7.0
 Release:	3
-License:	Distributable provided copyright and permission notices are included
+License:	distributable provided copyright and permission notices are included
 Group:		X11/Applications/Networking
 Group(de):	X11/Applikationen/Netzwerkwesen
 Group(pl):	X11/Aplikacje/Sieciowe
