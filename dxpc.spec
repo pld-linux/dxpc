@@ -2,7 +2,7 @@ Summary:	dxpc - The Differential X Protocol Compressor
 Summary(pl):	Ró¿nicowy kompresor X protoko³u
 Name:		dxpc
 Version:	3.7.0
-Release:	3
+Release:	4
 License:	distributable provided copyright and permission notices are included
 Group:		X11/Applications/Networking
 Source0:	http://ccwf.cc.utexas.edu/~zvonler/dxpc/%{name}-%{version}.tar.gz
@@ -11,6 +11,7 @@ Source1:	%{name}.1.pl
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-socklen_t.patch
 Patch2:		%{name}-ac_lt.patch
+Patch3:		%{name}-gcc3.patch
 URL:		http://ccwf.cc.utexas.edu/~zvonler/dxpc/
 Icon:		dxpc.logo-smaller-t.gif
 BuildRequires:	autoconf
@@ -33,6 +34,7 @@ przepustowo¶ci.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__libtoolize}
@@ -56,8 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES README TODO
-%doc dxpc.logo.jpg dxpc.logo-small.jpg
+%doc CHANGES README TODO dxpc.logo.jpg dxpc.logo-small.jpg
 %attr(755,root,root) %{_bindir}/dxpc
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
