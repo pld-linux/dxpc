@@ -2,18 +2,21 @@ Summary:	dxpc - The Differential X Protocol Compressor
 Summary(pl):	Ró¿nicowy kompresor X protoko³u
 Name:		dxpc
 Version:	3.7.0
-Release:	1
+Release:	2
+License:	Distributable provided copyright and permission notices are included
 Group:		X11/Applications/Networking
 Group(de):	X11/Applikationen/Netzwerkwesen
 Group(pl):	X11/Aplikacje/Sieciowe
-License:	Distributable provided copyright and permission notices are included
 Source0:	http://ccwf.cc.utexas.edu/~zvonler/dxpc/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-socklen_t.patch
 Patch2:		%{name}-ac_lt.patch
 URL:		http://ccwf.cc.utexas.edu/~zvonler/dxpc/
 Icon:		dxpc.logo-smaller-t.gif
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libstdc++-devel
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -38,7 +41,7 @@ przepustowo¶ci.
 libtoolize -c -f
 aclocal
 autoconf
-CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
+CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -fno-implicit-templates"
 %configure
 %{__make}
 
