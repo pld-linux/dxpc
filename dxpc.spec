@@ -5,8 +5,6 @@ Version:	3.7.0
 Release:	3
 License:	distributable provided copyright and permission notices are included
 Group:		X11/Applications/Networking
-Group(de):	X11/Applikationen/Netzwerkwesen
-Group(pl):	X11/Aplikacje/Sieciowe
 Source0:	http://ccwf.cc.utexas.edu/~zvonler/dxpc/%{name}-%{version}.tar.gz
 Source1:	%{name}.1.pl
 Patch0:		%{name}-DESTDIR.patch
