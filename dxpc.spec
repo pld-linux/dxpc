@@ -39,7 +39,7 @@ przepustowo¶ci.
 %build
 libtoolize -c -f
 aclocal
-autoconf
+%{__autoconf}
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -fno-implicit-templates"
 %configure
 %{__make}
