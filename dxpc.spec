@@ -22,7 +22,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 dxpc is an X protocol compressor designed to improve the speed of X11
 applications run over low-bandwidth links.
 
-%description
+%description -l pl
 dxpc jest kompresorem X protoko³u zaprojektowanym dla zwiêkszenia
 szybko¶ci dzia³ania aplikacji uruchamianych przez ³±cza o ma³ej
 przepustowo¶ci.
