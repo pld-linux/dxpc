@@ -9,13 +9,11 @@ Source0:	http://www.vigor.nu/%{name}/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	3fbfb0e4bf769e64d27da331ecddbc9f
 Source1:	%{name}.1.pl
 Patch0:		%{name}-DESTDIR.patch
-Patch1:		%{name}-ac_lt.patch
 URL:		http://www.vigor.nu/dxpc/
 Icon:		dxpc.logo-smaller-t.gif
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
-BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -30,10 +28,9 @@ przepustowo¶ci.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
-%{__libtoolize}
+cp -f /usr/share/automake/config.* .
 %{__aclocal}
 %{__autoconf}
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -fno-implicit-templates"
