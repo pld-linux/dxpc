@@ -30,7 +30,7 @@ dxpc jest kompresorem X protoko³u zaprojektowanym dla zwiêkszenia
 szybko¶ci dzia³ania aplikacji uruchamianych przez ³±cza o ma³ej
 przepustowo¶ci.
 
-%prep 
+%prep
 %setup -q
 %patch0 -p1
 %patch1 -p1
