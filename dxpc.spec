@@ -19,7 +19,6 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
 dxpc is an X protocol compressor designed to improve the speed of X11
 applications run over low-bandwidth links.
@@ -45,10 +44,11 @@ CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -fno-implicit-templates"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/dxpc.1
 
 %clean
