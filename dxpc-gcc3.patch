@@ -1,0 +1,23 @@
+--- dxpc-3.7.0/main.C.orig	2004-03-28 19:09:28.000000000 +0200
++++ dxpc-3.7.0/main.C	2004-03-28 19:11:32.654196712 +0200
+@@ -357,8 +357,8 @@
+       if (setsockopt(tcpFD, SOL_SOCKET, SO_REUSEADDR, (char *) &flag,
+ 		     sizeof(flag)) < 0)
+       {
+-	cerr << "setsockopt(SO_REUSEADDR) failed for TCP socket,
+-	  errno = " << errno << endl;
++	cerr << "setsockopt(SO_REUSEADDR) failed for TCP socket, "
++	  "errno = " << errno << endl;
+       }
+       sockaddr_in tcpAddr;
+       tcpAddr.sin_family = AF_INET;
+--- dxpc-3.7.0/util.H.orig	1997-06-03 03:04:00.000000000 +0200
++++ dxpc-3.7.0/util.H	2004-03-28 19:13:51.531084216 +0200
+@@ -2,6 +2,7 @@
+ #define util_H
+ 
+ #include <fstream.h>
++#include <iostream.h>
+ 
+ extern unsigned int GetUINT(unsigned const char *, int bigEndian);
+ extern unsigned int GetULONG(unsigned const char *, int bigEndian);
