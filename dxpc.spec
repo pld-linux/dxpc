@@ -6,6 +6,7 @@ Release:	3
 License:	distributable provided copyright and permission notices are included
 Group:		X11/Applications/Networking
 Source0:	http://ccwf.cc.utexas.edu/~zvonler/dxpc/%{name}-%{version}.tar.gz
+# Source0-md5:	9b9b6605e46bf1731d44e150049a019e
 Source1:	%{name}.1.pl
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-socklen_t.patch
