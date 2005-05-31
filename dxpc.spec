@@ -11,9 +11,11 @@ Source1:	%{name}.1.pl
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.vigor.nu/dxpc/
 Icon:		dxpc.logo-smaller-t.gif
+BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
+BuildRequires:	lzo-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
