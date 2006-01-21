@@ -10,7 +10,6 @@ Source0:	http://www.vigor.nu/%{name}/%{version}/%{name}-%{version}.tar.gz
 Source1:	%{name}.1.pl
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.vigor.nu/dxpc/
-Icon:		dxpc.logo-smaller-t.gif
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
