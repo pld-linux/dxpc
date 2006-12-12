@@ -2,19 +2,20 @@ Summary:	dxpc - The Differential X Protocol Compressor
 Summary(pl):	Ró¿nicowy kompresor X protoko³u
 Name:		dxpc
 Version:	3.8.2
-Release:	1
+Release:	2
 License:	distributable provided copyright and permission notices are included
 Group:		X11/Applications/Networking
 Source0:	http://www.vigor.nu/%{name}/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	3fbfb0e4bf769e64d27da331ecddbc9f
 Source1:	%{name}.1.pl
 Patch0:		%{name}-DESTDIR.patch
+Patch1:		%{name}-lzo2.patch
 URL:		http://www.vigor.nu/dxpc/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
-BuildRequires:	lzo-devel
+BuildRequires:	lzo-devel >= 2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -29,6 +30,7 @@ przepustowo¶ci.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.* .
