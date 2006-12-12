@@ -1,0 +1,3 @@
+- added regenerating configuration files, ac 2.5 ready
+- added patch: ac_lt patch to use libtool
+- s/make/%{__make}/
