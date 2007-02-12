@@ -1,5 +1,5 @@
 Summary:	dxpc - The Differential X Protocol Compressor
-Summary(pl.UTF-8):   Różnicowy kompresor X protokołu
+Summary(pl.UTF-8):	Różnicowy kompresor X protokołu
 Name:		dxpc
 Version:	3.8.2
 Release:	2
