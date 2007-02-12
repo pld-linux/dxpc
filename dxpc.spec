@@ -1,5 +1,5 @@
 Summary:	dxpc - The Differential X Protocol Compressor
-Summary(pl):	RÛønicowy kompresor X protoko≥u
+Summary(pl.UTF-8):   R√≥≈ºnicowy kompresor X protoko≈Çu
 Name:		dxpc
 Version:	3.8.2
 Release:	2
@@ -22,10 +22,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 dxpc is an X protocol compressor designed to improve the speed of X11
 applications run over low-bandwidth links.
 
-%description -l pl
-dxpc jest kompresorem X protoko≥u zaprojektowanym dla zwiÍkszenia
-szybko∂ci dzia≥ania aplikacji uruchamianych przez ≥±cza o ma≥ej
-przepustowo∂ci.
+%description -l pl.UTF-8
+dxpc jest kompresorem X protoko≈Çu zaprojektowanym dla zwiƒôkszenia
+szybko≈õci dzia≈Çania aplikacji uruchamianych przez ≈ÇƒÖcza o ma≈Çej
+przepustowo≈õci.
 
 %prep
 %setup -q
